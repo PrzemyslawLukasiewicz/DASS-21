@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>DASS-21 – Depresja, Lęk, Stres</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; }
+    label { display: block; margin-top: 12px; font-weight: bold; }
+    select { width: 100%; padding: 5px; margin-top: 5px; }
+    button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+    #result { margin-top: 30px; font-size: 18px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>DASS-21 – Skala Depresji, Lęku i Stresu</h1>
+  <p>Proszę zaznaczyć, jak bardzo dane stwierdzenie odnosiło się do Ciebie w ostatnim tygodniu:</p>
+  <form id="dassForm">
+<label for="q1">1. Bardzo trudno było mi się odprężyć</label>
+<select name="q1" data-skala="stres">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q2">2. Odczuwałem/am suchość w ustach</label>
+<select name="q2" data-skala="lęk">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q3">3. Nie mogłem/am doświadczać żadnych pozytywnych uczuć</label>
+<select name="q3" data-skala="depresja">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q4">4. Odczuwałem/am trudności w oddychaniu</label>
+<select name="q4" data-skala="lęk">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q5">5. Trudno było mi coś zacząć</label>
+<select name="q5" data-skala="depresja">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q6">6. Miałem/am tendencję do nadmiernego reagowania</label>
+<select name="q6" data-skala="stres">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q7">7. Odczuwałem/am drżenia</label>
+<select name="q7" data-skala="lęk">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q8">8. Używałem/am dużo nerwowej energii</label>
+<select name="q8" data-skala="stres">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q9">9. Obawiałem/am się sytuacji panikogennych</label>
+<select name="q9" data-skala="lęk">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q10">10. Czułem/am, że nic mnie już w życiu nie spotka</label>
+<select name="q10" data-skala="depresja">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q11">11. Czułem/am się podminowany</label>
+<select name="q11" data-skala="stres">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q12">12. Trudno było mi się zrelaksować</label>
+<select name="q12" data-skala="stres">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q13">13. Czułem/am się przybity i smutny</label>
+<select name="q13" data-skala="depresja">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q14">14. Nie mogłem/am znieść przeszkadzania mi w zajęciu</label>
+<select name="q14" data-skala="stres">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q15">15. Czułem/am, że jestem bliski wpadnięcia w panikę</label>
+<select name="q15" data-skala="lęk">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q16">16. Nie mogłem/am się z niczego ucieszyć</label>
+<select name="q16" data-skala="depresja">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q17">17. Czułem/am się niewartościową osobą</label>
+<select name="q17" data-skala="depresja">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q18">18. Czułem/am, że jestem raczej przewrażliwiony</label>
+<select name="q18" data-skala="stres">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q19">19. Czułem/am bicie serca bez wysiłku fizycznego</label>
+<select name="q19" data-skala="lęk">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q20">20. Czułem/am się przestraszony bez powodu</label>
+<select name="q20" data-skala="lęk">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+<label for="q21">21. Czułem/am, że życie jest bezwartościowe</label>
+<select name="q21" data-skala="depresja">
+<option value="0">0 – wcale</option>
+<option value="1">1 – trochę</option>
+<option value="2">2 – dość</option>
+<option value="3">3 – bardzo</option>
+</select>
+
+    <button type="button" onclick="calculate()">Pokaż wyniki</button>
+  </form>
+  <div id="result"></div>
+
+<script>
+function calculate() {
+  const form = document.getElementById('dassForm');
+  let depresja = 0, lek = 0, stres = 0;
+  for (let el of form.elements) {
+    if (el.tagName === "SELECT") {
+      const skala = el.dataset.skala;
+      const val = parseInt(el.value);
+      if (skala === "depresja") depresja += val;
+      else if (skala === "lęk") lek += val;
+      else if (skala === "stres") stres += val;
+    }
+  }
+  depresja *= 2;
+  lek *= 2;
+  stres *= 2;
+
+  document.getElementById('result').innerHTML = 
+    "Wynik skali depresji: " + depresja + " pkt<br>" +
+    "Wynik skali lęku: " + lek + " pkt<br>" +
+    "Wynik skali stresu: " + stres + " pkt";
+}
+</script>
+</body>
+</html>
